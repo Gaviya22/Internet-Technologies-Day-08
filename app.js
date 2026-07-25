@@ -36,42 +36,105 @@ console.log("Hii");
 
 
 
-const customerList =[];
+const customerList = [];
 
-function btnAddCustomerOnAction(){
+function btnAddCustomerOnAction() {
+
     let customer = {
-        id:document.getElementById("txtCustomerId").value,
-        name:document.getElementById("txtCustomerName").value,
-        age:document.getElementById("txtCustomerAge").value,
-        address:document.getElementById("txtCustomerAddress").value
+        id: document.getElementById("txtCustomerId").value,
+        name: document.getElementById("txtCustomerName").value,
+        age: document.getElementById("txtCustomerAge").value,
+        address: document.getElementById("txtCustomerAddress").value
     }
+
     console.log(customer);
 
     customerList.push(customer);
 
     console.log(customerList);
-    
-    localStorage.setItem("customerList",JSON.stringify(customerList));
 
-    // alert("add customer")
+    localStorage.setItem("customerList", JSON.stringify(customerList));
 }
 
-function btnSearchByIdOnAction(){
-    alert("search customer")
+function btnSearchByIdOnAction() {
+
+    let id = document.getElementById("txtCustomerId").value;
+
+    let customerArray = JSON.parse(localStorage.getItem("customerList"));
+
+    for (let i = 0; i < customerArray.length; i++) {
+
+        if (customerArray[i].id == id) {
+
+            document.getElementById("txtCustomerName").value = customerArray[i].name;
+            document.getElementById("txtCustomerAge").value = customerArray[i].age;
+            document.getElementById("txtCustomerAddress").value = customerArray[i].address;
+
+            return;
+        }
+    }
+
+    alert("Customer Not Found");
 }
 
-function btnDeleteByIdOnAction(){
-    alert("delete customer");
+function btnDeleteByIdOnAction() {
+
+    let id = document.getElementById("txtCustomerId").value;
+
+    let customerArray = JSON.parse(localStorage.getItem("customerList"));
+
+    for (let i = 0; i < customerArray.length; i++) {
+
+        if (customerArray[i].id == id) {
+
+            customerArray.splice(i, 1);
+
+            localStorage.setItem("customerList", JSON.stringify(customerArray));
+
+            alert("Customer Deleted");
+
+            return;
+        }
+    }
+
+    alert("Customer Not Found");
 }
 
-function btnUpdateByIdOnAction(){
-    alert("update customer");
+function btnUpdateByIdOnAction() {
+
+    let id = document.getElementById("txtCustomerId").value;
+
+    let customerArray = JSON.parse(localStorage.getItem("customerList"));
+
+    for (let i = 0; i < customerArray.length; i++) {
+
+        if (customerArray[i].id == id) {
+
+            customerArray[i].name = document.getElementById("txtCustomerName").value;
+            customerArray[i].age = document.getElementById("txtCustomerAge").value;
+            customerArray[i].address = document.getElementById("txtCustomerAddress").value;
+
+            localStorage.setItem("customerList", JSON.stringify(customerArray));
+
+            alert("Customer Updated");
+
+            return;
+        }
+    }
+
+    alert("Customer Not Found");
 }
 
-function btnClearStorageOnAction(){
+function btnClearStorageOnAction() {
+
     localStorage.clear();
+
+    alert("Storage Cleared");
 }
 
-function btnLoadTableOnAction(){
-    alert("load table");
+function btnLoadTableOnAction() {
+
+    let customerArray = JSON.parse(localStorage.getItem("customerList"));
+
+    console.log(customerArray);
 }
