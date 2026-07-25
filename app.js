@@ -11,3 +11,20 @@ console.log("Hii");
 // localStorage.clear();
 
 
+
+
+let customer = {
+    name: "kamal",
+    age: 12,
+    isActive: true
+};
+
+let stringCustomer = JSON.stringify(customer);
+
+localStorage.setItem("customer", stringCustomer);
+
+let retCustomer = localStorage.getItem("customer");
+
+let jsonCustomer = JSON.parse(retCustomer);
+
+console.log(jsonCustomer);
