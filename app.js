@@ -8,4 +8,6 @@ console.log("Hii");
 // let custName = localStorage.getItem("name");
 // console.log(custName);
 
+// localStorage.clear();
+
 
