@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Customer Management System</h1>
+    <div class="container">
 
-    <input type="text" placeholder="id" id="txtCustomerId">
-    <input type="text" placeholder="name" id="txtCustomerName"> 
-    <input type="text" placeholder="age" id="txtCustomerAge">
-    <input type="text" placeholder="address" id="txtCustomerAddress">
+        <h1>Customer Management System</h1>
 
-    <hr>
+        <div class="form-group">
+            <input type="text" placeholder="Customer ID" id="txtCustomerId">
+            <input type="text" placeholder="Customer Name" id="txtCustomerName">
+            <input type="text" placeholder="Customer Age" id="txtCustomerAge">
+            <input type="text" placeholder="Customer Address" id="txtCustomerAddress">
+        </div>
 
-    <input type="button" value="Add Customer" onclick="btnAddCustomerOnAction()">
-    <input type="button" value="Search By ID" onclick="btnSearchByIdOnAction()">
-    <input type="button" value="Delete By ID" onclick="btnDeleteByIdOnAction()">
-    <input type="button" value="Update By ID" onclick="btnUpdateByIdOnAction()">
-    <input type="button" value="Clear Storage" onclick="btnClearStorageOnAction()">
-    <input type="button" value="Load Table" onclick="btnLoadTableOnAction()">
-    
+        <hr>
+
+        <div class="button-group">
+            <input type="button" value="Add Customer" onclick="btnAddCustomerOnAction()">
+            <input type="button" value="Search By ID" onclick="btnSearchByIdOnAction()">
+            <input type="button" value="Delete By ID" onclick="btnDeleteByIdOnAction()">
+            <input type="button" value="Update By ID" onclick="btnUpdateByIdOnAction()">
+            <input type="button" value="Clear Storage" onclick="btnClearStorageOnAction()">
+            <input type="button" value="Load Table" onclick="btnLoadTableOnAction()">
+        </div>
+
+    </div>
+
     <script src="app.js"></script>
+
 </body>
 </html>
