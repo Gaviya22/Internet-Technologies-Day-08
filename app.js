@@ -38,7 +38,6 @@ console.log("Hii");
 
 const customerList = [];
 
-// Add Customer
 function btnAddCustomerOnAction() {
 
     let customer = {
@@ -63,7 +62,6 @@ function btnAddCustomerOnAction() {
     clearFields();
 }
 
-// Search
 function btnSearchByIdOnAction(){
 
     let id = document.getElementById("txtCustomerId").value;
@@ -90,7 +88,6 @@ function btnSearchByIdOnAction(){
     alert("Customer Not Found");
 }
 
-// Delete
 function btnDeleteByIdOnAction(){
 
     let id = document.getElementById("txtCustomerId").value;
@@ -123,7 +120,6 @@ function btnDeleteByIdOnAction(){
     alert("Customer Not Found");
 }
 
-// Update
 function btnUpdateByIdOnAction(){
 
     let id = document.getElementById("txtCustomerId").value;
@@ -158,7 +154,6 @@ function btnUpdateByIdOnAction(){
     alert("Customer Not Found");
 }
 
-// Clear Storage
 function btnClearStorageOnAction(){
 
     localStorage.clear();
@@ -170,7 +165,6 @@ function btnClearStorageOnAction(){
     clearFields();
 }
 
-// Load Table
 function btnLoadTableOnAction(){
 
     let customerArray = JSON.parse(localStorage.getItem("customerList"));
@@ -199,7 +193,6 @@ function btnLoadTableOnAction(){
     }
 }
 
-// Clear Input Fields
 function clearFields(){
 
     document.getElementById("txtCustomerId").value = "";
